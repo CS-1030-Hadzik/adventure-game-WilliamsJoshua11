@@ -38,11 +38,11 @@ while True:
     decision = input('What will you do? (1,2,3): ')
 
     if decision == '1':
-        print(f'{player_name}, you step into the dark woods.' 
+        print(f'{player_name}, you step into the dark woods. ' 
           'The trees whisper as you walk deeper.')
     elif decision == '2':
-        print(f'{player_name}, you make your way'
-          'toward the mountain pass, feeling'
+        print(f'{player_name}, you make your way '
+          'toward the mountain pass, feeling '
           'cold wind against your face')
     elif decision == '3':
         print(f'You stay still, listening to the'
@@ -50,3 +50,11 @@ while True:
     else:
         print('that option does not work adventurer, please choose'
           '1, 2, or 3. ')
+
+    # ask if player wishes to continue
+    playAgain = input('Do you wish to continue exploring?'
+      '(yes or no): ')
+    if playAgain != 'yes':
+        print(f'Thank you for playing, {player_name} '
+          'See you next time.')
+        break
