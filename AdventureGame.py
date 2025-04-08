@@ -50,7 +50,6 @@ def add_to_inventory(self, item):
 # ----- runs welcome_player and describe area
 
 player = welcome_player()
-
 describe_area()
 
 #start game loop
@@ -64,13 +63,13 @@ while True:
     if decision == '1':
         print(f'{player}, you step into the dark woods. ' 
           'The trees whisper as you walk deeper.')
-        add_to_inventory(self, 'lamp')
+        add_to_inventory(player, 'lamp')
     
     elif decision == '2':
         print(f'{player}, you make your way '
           'toward the mountain pass, feeling '
           'cold wind against your face')
-        add_to_inventory(self, 'map')
+        add_to_inventory(player, 'map')
     
     elif decision == '3':
         print(f'You stay still, listening to the'
