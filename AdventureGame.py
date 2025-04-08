@@ -61,13 +61,13 @@ while True:
     print('\t3. Stay where you are')
     print('\tType \'i\' to view your inventory.')
 
-    decision = input('What will you do? (1,2,3): ')
+    decision = input('What will you do? (1,2,3,4,5,i): ')
 
     if decision == 'i':
         print("Inventory", player.inventory)
         continue
 
-    if decision == '1':
+    elif decision == '1':
         print(f'{player.name}, you step into the dark woods. ' 
           'The trees whisper as you walk deeper.')
         add_to_inventory(player, 'lamp')
@@ -81,13 +81,27 @@ while True:
         player.has_map = True
     
     elif decision == '3':
+        print(f'{player.name}, you bravely enter the dark cave, your senses sharpen in the quiet darkness')
+        if player.has_lantern == True:
+            print(f'You find some fantastical treasure hidden in the darkness')
+            add_to_inventory(player, 'treasure')
+        else:
+            print(f'It is too dark for you to see without a lantern')
+
+    elif decision == '4':
+        if player.has_map == True:
+            print(f'You come across a fantastic valley seemingly hidden by time itself')
+            print(f'as you travel this valley you come across some rare herbs')
+            add_to_inventory(player, 'rare herbs')
+        else:
+            print(f'You look for the hidden valley, but seem to just be walking in circles')
+    elif decision == '5':
         print(f'You stay still, listening to the'
           'sounds of the forest')
         
-    
     else:
         print('that option does not work adventurer, please choose'
-          '1, 2, or 3. ')
+          '1, 2, 3, 4, 5, or \'i\' ')
 
     # ask if player wishes to continue
     playAgain = input('Do you wish to continue exploring?'
@@ -98,3 +112,9 @@ while True:
         break
 
 
+
+# TODO: After picking up new items, confirm to the player they got it
+# TODO: Save your changes (Ctrl+S or Command+S)
+# TODO: Commit with a message like:
+#       REF unlock new areas based on inventory items
+# TODO: Push your commits to GitHub
