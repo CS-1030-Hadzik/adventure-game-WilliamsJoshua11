@@ -65,7 +65,7 @@ def explore_dark_woods(player):
     # if no lantern
     if 'lantern' not in player.inventory:
         add_to_inventory(player, 'lantern')
-        print(f'You found a lantern!')
+        print(f'\'lantern\' has been added to your inventory!')
     else:
         print(f'You have already found the lantern in the dark woods!')
 
@@ -76,7 +76,7 @@ def explore_mountain_pass(player):
     # if no map
     if 'map' not in player.inventory:
       add_to_inventory(player, 'map')
-      print(f'You found a map!')
+      print(f'\'map\' has been added to your inventory')
       player.has_map = True
     else:
         print(f'You already have the map!')
@@ -161,8 +161,17 @@ while True:
 
 
 
-# TODO: After picking up new items, confirm to the player they got it
-# TODO: Save your changes (Ctrl+S or Command+S)
-# TODO: Commit with a message like:
-#       REF unlock new areas based on inventory items
-# TODO: Push your commits to GitHub
+# TODO: Add a health attribute to the Player class (start at 100)
+# TODO: Create a function stay_still(player)
+#       - Subtract 10 health when the player stays still
+# TODO: Modify explore_cave(player)
+#       - If player does not have lantern, subtract 10 health
+# TODO: Modify explore_hidden_valley(player)
+#       - If player does not have map, subtract 10 health
+# TODO: Create a function check_win(player)
+#       - If "treasure" and "rare herbs" are both in inventory, print win message and exit
+# TODO: Create a function check_lose(player)
+#       - If health is 0 or lower, print lose message and exit
+# TODO: Show the player's current health after every action
+# TODO: Continue using good Git habits: save, commit, push!
+# TODO: Final commit message example: "COMPLETE Final Adventure Game"
