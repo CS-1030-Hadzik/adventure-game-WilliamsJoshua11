@@ -46,7 +46,11 @@ def add_to_inventory(self, item):
     player.inventory.append(item)
     print(f'You picked up a {item}!')
 
-# -----
+# ----- runs welcome_player and describe area
+
+player = welcome_player()
+
+describe_area()
 
 #start game loop
 while True:
@@ -57,10 +61,10 @@ while True:
     decision = input('What will you do? (1,2,3): ')
 
     if decision == '1':
-        print(f'{player_name}, you step into the dark woods. ' 
+        print(f'{player.name}, you step into the dark woods. ' 
           'The trees whisper as you walk deeper.')
     elif decision == '2':
-        print(f'{player_name}, you make your way '
+        print(f'{player.name}, you make your way '
           'toward the mountain pass, feeling '
           'cold wind against your face')
     elif decision == '3':
@@ -74,7 +78,7 @@ while True:
     playAgain = input('Do you wish to continue exploring?'
       '(yes or no): ')
     if playAgain != 'yes':
-        print(f'Thank you for playing, {player_name} '
+        print(f'Thank you for playing, {player.name} '
           'See you next time.')
         break
 
@@ -83,12 +87,9 @@ while True:
 
 
 
-# TODO: Define a function called add_to_inventory(item) that:
-#       - Takes an item (string) as a parameter
-#       - Adds the item to the inventory list
-#       - Prints a message saying the item was picked up
 
-# TODO: Call welcome_player() and store the result in a variable called player_name
+
+
 
 # TODO: Call describe_area() to print the scene before the game loop starts
 
