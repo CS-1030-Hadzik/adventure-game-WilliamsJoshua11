@@ -34,7 +34,7 @@ def welcome_player():
 
     return player
 
-#-----
+#----- describe area
 
 def describe_area():
     # Describe the starting area
@@ -44,7 +44,7 @@ def describe_area():
     A faint path lies ahead, leading deeper into the
     unknown... """)
 
-# ----- 
+# ----- add inventory
 
 def add_to_inventory(self, item):
     player.inventory.append(item)
@@ -112,7 +112,25 @@ def stay_still(player):
     print(f'You got bit by a mosquito')
     player.health -= 10
 
+# ----- checkwin
+
+def check_win(player):
+    if 'treasure' in player.inventory and 'rare herbs' in player.inventory:
+        print(f'Congrats {player.name}, on your fantastic win!')
+        print(f'while for many it may have seemed hard, you made it look all to easy!')
+        print(f'Congrats!!!')
+        exit()
+    else:
+        print(f'There may be more for you to do')
+
+# ----- checklose
+
+
 while True:
+
+    check_win(player)
+
+    print(f'\tYou are currently at {player.health} hitpoints')
     print('\nYou see some paths ahead:')
     print('\t1. Take the left path into the dark woods.')
     print('\t2. Take the right path toward the mountain pass.')
@@ -163,7 +181,7 @@ while True:
               "1, 2, or 3.")
     
     # ---
-    
+
     # Ask if they want to continue
     play_again = input("Do you want to continue "
                        "exploring? (yes or no): ").lower()
@@ -183,13 +201,8 @@ while True:
 
 
 
-# TODO: Add a health attribute to the Player class (start at 100)
-# TODO: Create a function stay_still(player)
-#       - Subtract 10 health when the player stays still
-# TODO: Modify explore_cave(player)
-#       - If player does not have lantern, subtract 10 health
-# TODO: Modify explore_hidden_valley(player)
-#       - If player does not have map, subtract 10 health
+
+
 # TODO: Create a function check_win(player)
 #       - If "treasure" and "rare herbs" are both in inventory, print win message and exit
 # TODO: Create a function check_lose(player)
