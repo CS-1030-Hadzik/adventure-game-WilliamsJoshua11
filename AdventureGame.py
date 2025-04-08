@@ -121,13 +121,13 @@ def check_win(player):
         print(f'Congrats!!!')
         exit()
     else:
-        print(f'There may be more for you to do')
+        print(f'There may be more for you to do...')
 
 # ----- checklose
 
 def check_lose(player):
     if player.health == 0:
-        print(f'It seems you have sustained too many injuries')
+        print(f'But it seems you have sustained too many injuries')
         print(f'I believe this is where your adventure ends')
         print(f'Thanks for Playing!!!')
         exit()
