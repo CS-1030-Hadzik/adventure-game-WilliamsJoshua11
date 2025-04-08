@@ -2,32 +2,40 @@
 This is a Doc String
 Adventure Game
 Author: Joshua Williams
-Version: 1.0
+Version: 1.1
 Description:
 This is a text-based adventure game where the player makes choices
 to navigate through a mysterious forest.
 '''
 
 
-# Welcome Message and Introduction
-print('Welcome to the Adventure Game')
-print('Your journey begins here...')
+# ----- Welcome Message and Introduction
 
-# Ask for Player's name
+class Player:
+    # constructor
+    def __init__(self, name):
+        self.name = name
+        self.inventory = []
+        self.health = 100
+        self.has_map = False
+        self.has_lantern = False
+
+# -----
+
+def welcome_player():
+    # Welcome message and introduction
+    print('Welcome to the Adventure Game!')  
+    print('Your journey begins here... ')
+
+        # Ask for the player's name
+    name = input('What is your name, adventurer? ')
+    player = Player(name)
+
+# -----
+
 player_name = input('What is your name, adventurer? ')
 
-#Concatenate strings to create a personalized message (3 strings concatenated)
-# print('Welcome,' + player_name, + '! Your journey begins now.')
-
-# Using f-strings allow for more readability
-print(f'Welcome, {player_name}! Your journey begins now')
-
-# Description of starting area
-starting_area = """You find yourself in a dark forest.
-The sound of rustling leaves fills the air.
-A faint path lies ahead, leading deeper into the unknown...
-"""
-print(starting_area)
+# -----
 
 #start game loop
 while True:
@@ -58,3 +66,28 @@ while True:
         print(f'Thank you for playing, {player_name} '
           'See you next time.')
         break
+
+
+
+# TODO: Define a function called welcome_player() that:
+#       - Prints a welcome message
+#       - Asks the user for their name using input()
+#       - Welcomes the user using an f-string
+#       - Returns the player's name
+
+# TODO: Define a function called describe_area() that:
+#       - Prints a multi-line string describing the starting location of the game
+
+# TODO: Define a function called add_to_inventory(item) that:
+#       - Takes an item (string) as a parameter
+#       - Adds the item to the inventory list
+#       - Prints a message saying the item was picked up
+
+# TODO: Call welcome_player() and store the result in a variable called player_name
+
+# TODO: Call describe_area() to print the scene before the game loop starts
+
+# TODO: Inside the game loop:
+#       - If the user types "i", print the contents of the inventory
+#       - If the user chooses option 1, call add_to_inventory("lantern")
+#       - If the user chooses option 2, call add_to_inventory("map")
