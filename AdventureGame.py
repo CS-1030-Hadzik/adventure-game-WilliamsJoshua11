@@ -40,6 +40,12 @@ def describe_area():
     A faint path lies ahead, leading deeper into the
     unknown... """)
 
+# ----- add to inventory
+
+def add_to_inventory(self, item):
+    player.inventory.append(item)
+    print(f'You picked up a {item}!')
+
 # -----
 
 #start game loop
