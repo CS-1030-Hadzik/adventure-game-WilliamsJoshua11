@@ -115,7 +115,7 @@ while True:
     print('\t5. Do nothing')
     print('\tType \'i\' to view your inventory.')
 
-    decision = input("What will you do (1,2,3 or i): ").lower()
+    decision = input("What will you do (1,2,3, 4, 5, or i): ").lower()
 
     if decision == 'i':
         print("Inventory", player.inventory)
