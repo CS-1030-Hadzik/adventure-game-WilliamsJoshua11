@@ -22,11 +22,11 @@ class Player:
 
 def welcome_player():
     # Welcome message and introduction
-    print("Welcome to the Adventure Game!")  
+    print('Welcome to the Adventure Game!')  
     print('Your journey begins here... ')
 
         # Ask for the player's name
-    name = input("What is your name, adventurer? ")
+    name = input('What is your name, adventurer? ')
     player = Player(name)
 
     # Use an f-string to display the same message in a more readable way
@@ -48,7 +48,7 @@ def describe_area():
 
 def add_to_inventory(self, item):
     player.inventory.append(item)
-    print(f"You picked up a {item}!")
+    print(f'You picked up a {item}!')
 
 # ----- allows welcome_player func to run
 
