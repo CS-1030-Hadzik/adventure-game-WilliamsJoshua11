@@ -125,10 +125,19 @@ def check_win(player):
 
 # ----- checklose
 
+def check_lose(player):
+    if player.health == 0:
+        print(f'It seems you have sustained too many injuries')
+        print(f'I believe this is where your adventure ends')
+        print(f'Thanks for Playing!!!')
+        exit()
+
 
 while True:
 
     check_win(player)
+
+    check_lose(player)
 
     print(f'\tYou are currently at {player.health} hitpoints')
     print('\nYou see some paths ahead:')
