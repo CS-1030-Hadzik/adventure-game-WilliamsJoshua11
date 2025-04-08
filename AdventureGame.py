@@ -18,7 +18,7 @@ class Player:
         self.has_map = False
         self.has_lantern = False
 
-# -----
+# ----- welcomes the player,
 
 def welcome_player():
     # Welcome message and introduction
@@ -46,7 +46,7 @@ def describe_area():
 
 # ----- 
 
-def add_to_inventory(item):
+def add_to_inventory(self, item):
     player.inventory.append(item)
     print(f"You picked up a {item}!")
 
@@ -60,10 +60,10 @@ describe_area()
 
 # ----- option number 1
 
-def explore_dark_woods():
+def explore_dark_woods(player):
     print(f'{player.name}, you step into the dark woods...')
     # if no lantern
-    if 'lanter' not in player.inventory:
+    if 'lantern' not in player.inventory:
         add_to_inventory(player, 'lantern')
         print(f'You found a lantern!')
     else:
@@ -71,7 +71,7 @@ def explore_dark_woods():
 
 # ----- option number 2
 
-def explore_mountain_pass():
+def explore_mountain_pass(player):
     print(f'you make your way towards the mountain pass, feeling the cold wind against your face.')
     # if no map
     if 'map' not in player.inventory:
@@ -83,7 +83,7 @@ def explore_mountain_pass():
 
 # ----- option number 3
 
-def explore_cave():
+def explore_cave(player):
     print(f'{player.name}, you bravely enter the dark cave, your senses sharpen in the quiet darkness')
     if player.has_lantern == True:
         print(f'You find some fantastical treasure hidden in the darkness')
@@ -93,7 +93,7 @@ def explore_cave():
 
 # ----- option number 4
 
-def explore_hidden_valley():
+def explore_hidden_valley(player):
     if player.has_map == True:
         print(f'You come across a fantastic valley seemingly hidden by time itself')
         print(f'as you travel this valley you come across some rare herbs')
@@ -103,7 +103,7 @@ def explore_hidden_valley():
 
 # ----- option number 5
 
-def do_nothing():
+def do_nothing(player):
     print(f'you stand there {player.name}, unsure of your next move')
 
 while True:
