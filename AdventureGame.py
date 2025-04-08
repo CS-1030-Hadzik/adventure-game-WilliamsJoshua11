@@ -2,7 +2,7 @@
 DOCSTRING
 Adventure Game
 Author: Joshua Williams
-Version: 2.5
+Version: 3.0
 Description:
 This is a text-based adventure game where the player makes choices
 to navigate through a mysterious forest.
@@ -91,7 +91,7 @@ def explore_cave(player):
     else:
         print(f'It is too dark for you to see without a lantern')
         print(f'You banged your knee while stumbling through the cave')
-
+        player.health -= 10
 
 # ----- option number 4
 
@@ -103,17 +103,43 @@ def explore_hidden_valley(player):
     else:
         print(f'You look for the hidden valley, but seem to just be walking in circles')
         print(f'you got attacked by a squirrel while looking for the valley')
-
+        player.health -= 10
 
 # ----- option number 5
 
 def stay_still(player):
     print(f'you stand there {player.name}, unsure of your next move')
     print(f'You got bit by a mosquito')
+    player.health -= 10
+
+# ----- checkwin
+
+def check_win(player):
+    if 'treasure' in player.inventory and 'rare herbs' in player.inventory:
+        print(f'Congrats {player.name}, on your fantastic win!')
+        print(f'while for many it may have seemed hard, you made it look all to easy!')
+        print(f'Congrats!!!')
+        exit()
+    else:
+        print(f'There may be more for you to do...')
+
+# ----- checklose
+
+def check_lose(player):
+    if player.health == 0:
+        print(f'But it seems you have sustained too many injuries')
+        print(f'I believe this is where your adventure ends')
+        print(f'Thanks for Playing!!!')
+        exit()
 
 
 while True:
 
+    check_win(player)
+
+    check_lose(player)
+
+    print(f'\tYou are currently at {player.health} hitpoints')
     print('\nYou see some paths ahead:')
     print('\t1. Take the left path into the dark woods.')
     print('\t2. Take the right path toward the mountain pass.')
@@ -121,9 +147,9 @@ while True:
     print('\t4. Explore the Hidden Valley')
     print('\t5. Do nothing')
     print('\tType \'i\' to view your inventory.')
+    print('')
 
     decision = input("What will you do (1,2,3,4,5, or i): ").lower()
-    print('')
 
     # ---
 
@@ -166,11 +192,9 @@ while True:
     
     # ---
 
-    # Ask if they want to continue
     play_again = input("Do you want to continue "
                        "exploring? (yes or no): ").lower()
     if play_again != "yes":
         print(f"Thanks for playing, {player.name} "
               "See you next time.")
         break # Exit the loop and end the game
-
