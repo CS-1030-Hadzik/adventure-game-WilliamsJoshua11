@@ -90,6 +90,8 @@ def explore_cave(player):
         add_to_inventory(player, 'treasure')
     else:
         print(f'It is too dark for you to see without a lantern')
+        print(f'You banged your knee while stumbling through the cave')
+        player.health -= 10
 
 # ----- option number 4
 
@@ -100,11 +102,15 @@ def explore_hidden_valley(player):
         add_to_inventory(player, 'rare herbs')
     else:
         print(f'You look for the hidden valley, but seem to just be walking in circles')
+        print(f'you got attacked by a squirrel while looking for the valley')
+        player.health -= 10
 
 # ----- option number 5
 
-def do_nothing(player):
+def stay_still(player):
     print(f'you stand there {player.name}, unsure of your next move')
+    print(f'You got bit by a mosquito')
+    player.health -= 10
 
 while True:
     print('\nYou see some paths ahead:')
@@ -117,30 +123,46 @@ while True:
 
     decision = input("What will you do (1,2,3, 4, 5, or i): ").lower()
 
+    # ---
+
     if decision == 'i':
         print("Inventory", player.inventory)
         continue
+
+    # ---
 
     if decision == '1':
         explore_dark_woods(player)
         player.has_lantern = True
 
+    # ---
+
     elif decision == '2':
         explore_mountain_pass(player)
         player.has_map = True
+
+    # ---
       
     elif decision == '3':
         explore_cave(player)
-        
+
+    # ---
+
     elif decision == '4':
         explore_hidden_valley(player)
 
+    # ---
+
     elif decision == '5':
-        do_nothing(player)
+        stay_still(player)
+
+    # ---
 
     else: 
         print("Invalid choice. Please choose "
               "1, 2, or 3.")
+    
+    # ---
     
     # Ask if they want to continue
     play_again = input("Do you want to continue "
