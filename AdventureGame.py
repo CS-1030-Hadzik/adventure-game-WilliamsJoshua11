@@ -212,10 +212,7 @@ while True:
 
 
 
-# TODO: Create a function check_win(player)
-#       - If "treasure" and "rare herbs" are both in inventory, print win message and exit
-# TODO: Create a function check_lose(player)
-#       - If health is 0 or lower, print lose message and exit
+
 # TODO: Show the player's current health after every action
 # TODO: Continue using good Git habits: save, commit, push!
 # TODO: Final commit message example: "COMPLETE Final Adventure Game"
