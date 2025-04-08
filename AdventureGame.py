@@ -31,9 +31,14 @@ def welcome_player():
     name = input('What is your name, adventurer? ')
     player = Player(name)
 
-# -----
+# ----- describe starting area
 
-player_name = input('What is your name, adventurer? ')
+def describe_area():
+    print( """
+    You find yourself in a dark forest
+    The sound of rustling leaves fills the air
+    A faint path lies ahead, leading deeper into the
+    unknown... """)
 
 # -----
 
@@ -69,14 +74,8 @@ while True:
 
 
 
-# TODO: Define a function called welcome_player() that:
-#       - Prints a welcome message
-#       - Asks the user for their name using input()
-#       - Welcomes the user using an f-string
-#       - Returns the player's name
 
-# TODO: Define a function called describe_area() that:
-#       - Prints a multi-line string describing the starting location of the game
+
 
 # TODO: Define a function called add_to_inventory(item) that:
 #       - Takes an item (string) as a parameter
