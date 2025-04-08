@@ -55,10 +55,12 @@ describe_area()
 
 #start game loop
 while True:
-    print('\nYou see two paths ahead')
+    print('\nYou see multiple paths ahead')
     print('\t1. Take the path into the dark woods')
     print('\t2. Take the right path toward the mountain pass')
-    print('\t3. Stay where you are')
+    print('\t3. Explore a nearby cave')
+    print('\t4. Explore the Hidden Valley')
+    print('\t5. Stay where you are')
     print('\tType \'i\' to view your inventory.')
 
     decision = input('What will you do? (1,2,3,4,5,i): ')
