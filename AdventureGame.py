@@ -61,15 +61,20 @@ while True:
     decision = input('What will you do? (1,2,3): ')
 
     if decision == '1':
-        print(f'{player.name}, you step into the dark woods. ' 
+        print(f'{player}, you step into the dark woods. ' 
           'The trees whisper as you walk deeper.')
+        add_to_inventory(self, 'lamp')
+    
     elif decision == '2':
-        print(f'{player.name}, you make your way '
+        print(f'{player}, you make your way '
           'toward the mountain pass, feeling '
           'cold wind against your face')
+        add_to_inventory(self, 'map')
+    
     elif decision == '3':
         print(f'You stay still, listening to the'
           'sounds of the forest')
+    
     else:
         print('that option does not work adventurer, please choose'
           '1, 2, or 3. ')
