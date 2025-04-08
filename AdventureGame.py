@@ -30,6 +30,7 @@ def welcome_player():
         # Ask for the player's name
     name = input('What is your name, adventurer? ')
     player = Player(name)
+    return player
 
 # ----- describe starting area
 
@@ -88,17 +89,3 @@ while True:
         break
 
 
-
-
-
-
-
-
-
-
-# TODO: Call describe_area() to print the scene before the game loop starts
-
-# TODO: Inside the game loop:
-#       - If the user types "i", print the contents of the inventory
-#       - If the user chooses option 1, call add_to_inventory("lantern")
-#       - If the user chooses option 2, call add_to_inventory("map")
