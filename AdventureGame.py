@@ -62,6 +62,7 @@ while True:
     print('\tType \'i\' to view your inventory.')
 
     decision = input('What will you do? (1,2,3,4,5,i): ')
+    print('')
 
     if decision == 'i':
         print("Inventory", player.inventory)
